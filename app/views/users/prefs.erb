@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+  <%= f.label :location %>
+  <%= f.collection_select :restaurant_ids, Restaurant.all, :id, :location %>
+  <% @user.location_match(@user.location) %>
+
+  <%= f.label :keyword %>
+  <%= f.collection_select :restaurant_ids, Restaurant.all, :id, :keyword %>
+  <% @user.keyword_match(@user.keyword) %>
+
+  <%= f.submit %>
+<% end %>

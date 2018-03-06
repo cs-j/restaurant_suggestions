@@ -1,3 +1,0 @@
-class QueriesController < ApplicationController
-
-end
