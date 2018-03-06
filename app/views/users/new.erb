@@ -5,14 +5,5 @@
    <%= f.label :password %><br>
    <%= f.password_field :password %><br>
    <br>
-   <%= f.label :location %>
-   <%= f.collection_select :location, Restaurant.all, :location, :location %>
-   <% @user.location_match(@user.location) %>
-
-   <%= f.label :keyword %>
-   <%= f.collection_select :keyword, Restaurant.all, :keyword, :keyword %>
-   <% @user.keyword_match(@user.keyword) %>
-
-
    <%= f.submit %>
 <%end%>

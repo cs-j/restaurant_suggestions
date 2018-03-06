@@ -6,9 +6,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Semantic UI CDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
   </head>
 
   <body>
+    <!-- Navigation -->
+    <div class="ui menu">
+      <div class="header item">
+        Home
+      </div>
+      <% if logged_in? %>
+      <% @user = User.find(current_user) %>
+        <a class="item">
+          Profile
+        </a>
+        <a class="item" href="<%=edit_user_path(@user)%>">
+          Search
+        </a>
+        <a class="item">
+          Restaurants
+        </a>
+      <% end %>
+    </div>
+    <!-- End of Navigation -->
+
     <%= yield %>
   </body>
 </html>

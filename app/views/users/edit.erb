@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+  <%= f.label :location %>
+  <%= f.collection_select :location, Restaurant.all.uniq {|restaurant| restaurant.location}, :location, :location %>
+  <%= f.label :cuisine %>
+  <%= f.collection_select :cuisine, Restaurant.all.uniq {|restaurant| restaurant.cuisine}, :cuisine, :cuisine %>
+  <%= f.label :keyword %>
+  <%= f.collection_select :keyword, Restaurant.all.uniq {|restaurant| restaurant.keyword}, :keyword, :keyword %>
+  <%= f.submit "Search" %>
+<% end %>

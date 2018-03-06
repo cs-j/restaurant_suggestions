@@ -1,2 +1,37 @@
-<%= @user.name %>
-<%= @user.matches %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="ui three doubling stackable cards">
+      <% @user.matches.each do |match| %>
+        <div class="ui card">
+          <div class="content">
+            <i class="right floated like icon"></i>
+            <i class="right floated star icon"></i>
+            <div class="header"><%=  match.restaurant.name %></div>
+            <div class="description">
+              <p></p>
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="left floated like">
+              <i class="like icon"></i>
+              <%=  match.restaurant.address %>
+            </span>
+            <span class="right floated star">
+              <i class="star icon"></i>
+              <%=  match.restaurant.description %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <br><br>
+
+  </body>
+</html>
