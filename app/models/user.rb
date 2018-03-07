@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :user_restaurants
   has_many :restaurants, through: :user_restaurants
   validates :name, uniqueness: true
+  has_secure_password
 
   def location_match(location)
     location_matches = Restaurant.all.select {|restaurant| restaurant.location == self.location}
