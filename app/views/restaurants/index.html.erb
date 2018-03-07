@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurants</title>
+  </head>
+  <body>
+
+    <div class="margin">
+    <center>
+    <br>
+    <center><%= form_tag(restaurants_path, method: :get) do%>
+      <div class="ui icon input">
+      <%= text_field_tag :query, params[:query], :placeholder => "Search restaurants..." %>
+      <i class="search icon" type="submit"></i>
+      </div>
+    <% end %></center>
+    <br>
+    <div class="ui middle aligned animated list">
+      <% sorted_restaurants = @restaurants.sort_by {|restaurant| restaurant.name.titleize} %>
+      <% sorted_restaurants.each do |restaurant| %>
+      <br>
+        <div class="item">
+          <img class="ui avatar image" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/location-alt-256.png" style="height: 25px; width: auto">
+          <div class="content">
+            <div class="header"><%= link_to restaurant.name, restaurant_path(restaurant) %></div>
+            <div class="description"><%= restaurant.address %></div>
+          </div>
+        </div>
+      <% end %>
+    </div></center>
+  </div>
+
+
+  </body>
+</html>
