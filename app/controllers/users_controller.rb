@@ -10,7 +10,8 @@ before_action :set_user, only: [:show, :edit, :update, :profile]
 
   def create
     if @user = User.create(user_params)
-      helpers.login(@user.id)
+      # helpers.login(@user.id)
+      current_user(@user.id)
       @user.location_match(@user.location)
       @user.keyword_match(@user.keyword)
       @user.cuisine_match(@user.cuisine)
