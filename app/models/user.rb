@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def matches
-    all_matches[0..6]
+    all_matches[0..5]
   end
 
   def all_matches

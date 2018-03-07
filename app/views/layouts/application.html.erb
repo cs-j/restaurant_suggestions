@@ -13,7 +13,29 @@
   </head>
 
   <body>
+    <!-- Navigation -->
+    <div class="ui menu">
+      <div class="header item">
+        Home
+      </div>
+      <% if logged_in? %>
+          <a class="item" href="<%= user_path(@user) %>">
+            Profile
+          </a>
+          <a class="item" href="<%=edit_user_path(@user)%>">
+            Search
+          </a>
 
+      <% else %>
+        <a class="item" href="<%=new_user_path%>">
+          Sign Up
+        </a>
+      <% end %>
+      <a class="item" href="<%= restaurants_path %>">
+        Restaurants
+      </a>
+    </div>
+    <!-- End of Navigation -->
 
     <%= yield %>
   </body>

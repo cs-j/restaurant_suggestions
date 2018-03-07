@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   # resources :user_restaurants
-  # resources :restaurants
+  resources :restaurants, only: [:index, :show]
   # resources :sessions
 
-  get 'users/:id/profile', to: "users#profile"
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :profile]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
   end
@@ -42,9 +42,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def profile
   end
 
 

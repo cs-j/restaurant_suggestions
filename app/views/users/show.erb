@@ -6,13 +6,15 @@
   </head>
   <body>
 
+  <div class="margin">
+    <h1><%=  @user.name%></h1>
     <div class="ui three doubling stackable cards">
-      <% @user.matches.each do |match| %>
+      <% @user.matches.each do |match | %>
         <div class="ui card">
           <div class="content">
             <i class="right floated like icon"></i>
             <i class="right floated star icon"></i>
-            <div class="header"><%=  match.restaurant.name %></div>
+            <div class="header"><%= link_to match.restaurant.name, restaurant_path(match.restaurant) %></div>
             <div class="description">
               <p></p>
             </div>
@@ -30,9 +32,13 @@
         </div>
       <% end %>
     </div>
-
-  
     <br><br>
+    <%= form_tag('/logout', method: :delete) do %>
+      <%= submit_tag "Logout" %>
+    <% end %>
+  </div>
+
+
 
   </body>
 </html>

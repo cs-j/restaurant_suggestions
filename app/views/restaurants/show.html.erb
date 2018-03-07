@@ -9,10 +9,11 @@
     <div class="margin">
 
       <h1><%= @restaurant.name %><h1>
-      <button class="ui teal basic button"><%= @restaurant.location %></button>
+
+      <button class="ui button" style="background: linear-gradient(to right, #f6b746, #f88358, #dc5b73, #a54886, #5b4285);"><%= @restaurant.location %></button>
       <button class="ui teal basic button"><%= @restaurant.cuisine %></button>
       <button class="ui teal basic button"><%= @restaurant.keyword %></button>
-      <button class="ui teal basic button"><a href="https://www.opentable.com/r/<%=@restaurant.name_to_open_table_string %>-new-york?p=2&sd=<%=@restaurant.date%>+19%3A00&page=1" target="_blank">Reserve</a></button>
+      <button class="ui red basic button" style="color:#CB4548"><a href="https://www.opentable.com/r/<%=@restaurant.name_to_open_table_string %>-new-york?p=2&sd=<%=@restaurant.date%>+19%3A00&page=1" target="_blank" style="color:#CB4548">Reserve</a></button>
       <h3 class="h3-font"><%= @restaurant.description %></h3>
 
 
@@ -26,6 +27,7 @@
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRKdAjqKre_n-DT4FvJaqFH2xIPvr1W_o&q=<%=@restaurant.address_to_google_string%>" allowfullscreen>
       </iframe></center>
   </div>
+
 
     </div>
 
