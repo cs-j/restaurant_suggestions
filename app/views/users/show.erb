@@ -6,13 +6,15 @@
   </head>
   <body>
 
+
+
   <div class="margin">
     <h1><%=  @user.name%></h1>
     <div class="ui three doubling stackable cards">
       <% @user.matches.each do |match | %>
         <div class="ui card">
           <div class="content">
-            <i class="right floated like icon"></i>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Going%20to%20<%=match.restaurant.name%>%20tonight,%20who%20wants%20to%20come?" target="_blank"><i class="right floated twitter icon"></i></a>
             <i class="right floated star icon"></i>
             <div class="header"><%= link_to match.restaurant.name, restaurant_path(match.restaurant) %></div>
             <div class="description">
