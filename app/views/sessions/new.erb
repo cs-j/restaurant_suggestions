@@ -18,7 +18,7 @@
    <title></title>
    <style type="text/css">
    body {
-     background-image: linear-gradient(to right top, #f6b746, #f88358, #dc5b73, #a54886, #5b4285);
+     background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
    }
    body > .grid {
      height: 100%;
@@ -33,11 +33,13 @@
  </head>
  <body>
 
+  
+
    <div class="margin">
 <br>
      <div class="ui middle aligned center aligned grid">
      <div class="column">
-       <h2 class="ui black image header" style="font-family: Futura">
+       <h2 class="ui image header" style="font-family: Futura; color: white">
          <div class="content">
            Log In To Your Account
          </div>
@@ -58,13 +60,13 @@
                <%= f.password_field :password %>
              </div>
              <br><br>
-             <button type="submit" class="ui fluid large button" style="font-family:Futura; background:#dc5b73">Log In</button>
+             <button type="submit" class="ui fluid large button" style="font-family:Futura; background:#4A9EEC; color: white">Log In</button>
           </div>
           </div>
          <% end %>
 
        <div class="ui message" style="background-color: white; font-family:Futura">
-         First Time? <a style="color: orange; font-family:Futura" href="<%= signup_path %>">Sign Up</a>
+         Don’t have an account? <a style="color: purple; font-family:Futura" href="<%= signup_path %>">Sign Up</a>
        </div>
      </div>
    </div>

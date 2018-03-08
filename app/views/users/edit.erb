@@ -5,13 +5,22 @@
     <title></title>
   </head>
   <body>
+
+
+
+    <div class="bg-img">
+      <div class="head-text">
+          <h2>Find unique restaurants all around New York</h2>
+      </div>
+
+    </div>
+
     <div class="margin">
+
+
       <div class="ui-form">
         <%= form_for @user do |f| %>
-            <div class="ui three column very relaxed grid">
-            <div class="column">
-            <label>Location</label>
-            <select class="ui search dropdown" name="user[location]" id="user_location">
+            <select class="ui search fluid dropdown" name="user[location]" id="user_location">
               <option value="">Select Location</option>
               <% unique_locations = Restaurant.all.map {|restaurant| restaurant.location}.uniq %>
               <% unique_locations = unique_locations.sort %>
@@ -19,11 +28,8 @@
               <option value="<%= location %>"><%= location %></option>
               <% end %>
             </select>
-
-            </div>
-            <div class="column">
-            <label>Cuisine</label>
-            <select class="ui search dropdown" name="user[cuisine]" id="user_cuisine">
+            <br>
+            <select class="ui search fluid dropdown" name="user[cuisine]" id="user_cuisine">
               <option value="">Select Cuisine</option>
               <% unique_cuisines = Restaurant.all.map {|restaurant| restaurant.cuisine}.uniq %>
               <% unique_cuisines = unique_cuisines.sort %>
@@ -31,11 +37,8 @@
               <option value="<%= cuisine %>"><%= cuisine %></option>
               <% end %>
             </select>
-
-            </div>
-            <div class="column">
-            <label>Vibe</label>
-            <select class="ui search dropdown" name="user[keyword]" id="user_keyword">
+            <br>
+            <select class="ui search fluid dropdown" name="user[keyword]" id="user_keyword">
               <option value="">Select Vibe</option>
               <% unique_keywords = Restaurant.all.map {|restaurant| restaurant.keyword}.uniq %>
               <% unique_keywords = unique_keywords.sort %>
@@ -43,18 +46,12 @@
               <option value="<%= keyword %>"><%= keyword %></option>
               <% end %>
             </select>
-          </div>
-
 
 <!-- keyword = Restaurant.all.map do |restaurant|
   restaurant.keyword
 end
 
 keyword.uniq -->
-
-
-          </div>
-
           <br><br>
           <!-- <%= f.label :location %>
           <%= f.collection_select :location, Restaurant.all.uniq {|restaurant| restaurant.location}, :location, :location %>
@@ -63,7 +60,7 @@ keyword.uniq -->
           <%= f.collection_select :cuisine, Restaurant.all.uniq {|restaurant| restaurant.cuisine}, :cuisine, :cuisine %>
           <%= f.label :keyword %>
           <%= f.collection_select :keyword, Restaurant.all.uniq {|restaurant| restaurant.keyword}, :keyword, :keyword %> -->
-          <center><button type="submit" class="ui button" style="background: linear-gradient(to right, #f6b746, #f88358, #dc5b73, #a54886, #5b4285);">Search</button></center>
+          <center><button type="submit" class="fluid ui button" style="background: linear-gradient(to right, #8C33E3, #696CE8, #4A9EEC); font-family:Futura; color:white">Search</button></center>
 
         <% end %>
       </div>

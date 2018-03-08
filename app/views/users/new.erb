@@ -1,3 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title></title>
+   <style type="text/css">
+   body {
+     background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+   }
+   body > .grid {
+     height: 100%;
+   }
+   .image {
+     margin-top: -100px;
+   }
+   .column {
+     max-width: 450px;
+   }
+ </style>
+ </head>
+ <body>
+
+   <div class="error-block">
+    <% if @user.errors.any? %>
+      <div class="ui error message">
+        <div class="header"><%= pluralize(@user.errors.count, "error") %></div>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end%>
+        </ul>
+      </div>
+    <% end %>
+   </div>
+
+   <div class="margin">
+
+<br>
+     <div class="ui middle aligned center aligned grid">
+     <div class="column">
+       <h2 class="ui image header" style="font-family: Futura; color: white">
+         <div class="content">
+           Sign Up For Your Account
+         </div>
+       </h2>
+
+       <!-- <form class="new_user ui large form"> -->
+
+
+         <%= form_for @user, controller: 'users', action: 'create', :html => {:class => "new user ui large form"} do |f| %>
+         <div class="ui stacked segment">
+           <div class="field">
+             <div class="ui left icon input">
+               <i class="user icon"></i>
+               <%= f.text_field :name %>
+             </div>
+           </div>
+             <div class="field">
+               <div class="ui left icon input">
+                 <i class="lock icon"></i>
+                 <%= f.password_field :password %>
+             </div>
+           </div>
+           <div class="field">
+             <div class="ui left icon input">
+               <i class="lock icon"></i>
+               <%= f.password_field :password_confirmation %>
+             </div>
+             <br><br>
+             <button type="submit" class="ui fluid large button" style="font-family:Futura; background:#4A9EEC; color: white">Sign Up</button>
+          </div>
+          </div>
+         <% end %>
+
+       <div class="ui message" style="background-color: white; font-family:Futura">
+         Already have an account? <a style="color: purple; font-family:Futura" href="<%= login_path %>">Log In</a>
+       </div>
+     </div>
+   </div>
+   </div>
+
+ </body>
+</html>
+
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,4 +107,4 @@
     <% end %>
     </div>
   </body>
-</html>
+</html> -->

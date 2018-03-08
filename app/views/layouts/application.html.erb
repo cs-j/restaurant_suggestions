@@ -15,14 +15,14 @@
   <body>
     <!-- Navigation -->
     <div class="ui menu">
-      <a class="header item" href="<%= home_path %>">
+      <a class="item font-fam" href="<%= home_path %>">
         Home
       </a>
-      <a class="item" href="<%= restaurants_path %>">
+      <a class="item font-fam" href="<%= restaurants_path %>">
         Restaurants
       </a>
       <% if logged_in? %>
-          <a class="item" href="<%= search_path %>">
+          <a class="item font-fam" href="<%= search_path %>">
             Search
           </a>
       <% end %>
@@ -30,24 +30,31 @@
 
       <div class="right menu">
         <% if !logged_in? %>
-          <a class="item" href="<%= login_path %>">
+          <a class="item font-fam" href="<%= login_path %>">
             Log In
           </a>
-          <a class="item" href="<%= signup_path %>">
+          <a class="item font-fam" href="<%= signup_path %>">
             Sign Up
           </a>
         <% else %>
-          <a class="item" href="<%= user_path(@user) %>">
+          <a class="item font-fam" href="<%= user_path(@user) %>">
             Profile
           </a>
-        <div class="item"><%= link_to "Log out", logout_path, method: :delete %>
+        <div class="item font-fam"><%= link_to "Log out", logout_path, method: :delete %>
         </div>
         <% end %>
       </div>
     </div>
 
+
+
     <!-- End of Navigation -->
 
     <%= yield %>
+
+    <footer>
+      <center><p>Brooke Yalof and Camille Jackson ©</p></center>
+    </footer>
+
   </body>
 </html>
