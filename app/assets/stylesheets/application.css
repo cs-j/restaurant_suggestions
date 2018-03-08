@@ -17,3 +17,17 @@
 .margin {
   margin: 20px 60px 0 60px;
 }
+
+body div.bg{
+ background-image: url("https://78.media.tumblr.com/66b86f1b43cd47eed365b4905a760558/tumblr_oauh7jEeVZ1talcpyo1_500.gif");
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ z-index: 99;
+ height: 100%;
+ width: 100%;
+}
+
+.text-container {
+  height: 50%;
+}

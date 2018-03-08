@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user.cuisine_match(@user.cuisine)
     return redirect_to new_user_path unless @user.save
     session[:user_id] = @user.id
-    redirect_to edit_user_path(@user)
+    redirect_to search_path(@user)
 
       # helpers.login(@user.id)
       # byebug
