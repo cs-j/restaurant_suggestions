@@ -10,25 +10,65 @@
 #
 #   <%= submit_tag "Sign In" %>
 # <% end %> -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="margin">
-      <%= form_for @user, url: login_path, method: :post do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+ <head>
+   <meta charset="utf-8">
+   <title></title>
+   <style type="text/css">
+   body {
+     background-image: linear-gradient(to right top, #f6b746, #f88358, #dc5b73, #a54886, #5b4285);
+   }
+   body > .grid {
+     height: 100%;
+   }
+   .image {
+     margin-top: -100px;
+   }
+   .column {
+     max-width: 450px;
+   }
+ </style>
+ </head>
+ <body>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+   <div class="margin">
+<br>
+     <div class="ui middle aligned center aligned grid">
+     <div class="column">
+       <h2 class="ui black image header" style="font-family: Futura">
+         <div class="content">
+           Log In To Your Account
+         </div>
+       </h2>
 
-        <%= f.submit "log in" %>
-        Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-      <% end %>
-    </div>
+       <!-- <form class="new_user ui large form"> -->
+       <%= form_for @user, url: login_path, method: :post, :html => {:class => "new user ui large form"}  do |f| %>
+         <div class="ui stacked segment">
+           <div class="field">
+             <div class="ui left icon input">
+               <i class="user icon"></i>
+               <%= f.text_field :name %>
+             </div>
+           </div>
+           <div class="field">
+             <div class="ui left icon input">
+               <i class="lock icon"></i>
+               <%= f.password_field :password %>
+             </div>
+             <br><br>
+             <button type="submit" class="ui fluid large button" style="font-family:Futura; background:#dc5b73">Log In</button>
+          </div>
+          </div>
+         <% end %>
 
-  </body>
+       <div class="ui message" style="background-color: white; font-family:Futura">
+         First Time? <a style="color: orange; font-family:Futura" href="<%= signup_path %>">Sign Up</a>
+       </div>
+     </div>
+   </div>
+   </div>
+
+ </body>
 </html>
