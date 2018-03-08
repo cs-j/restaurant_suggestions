@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :update]
 
   def index
   end
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user.cuisine_match(@user.cuisine)
     return redirect_to new_user_path unless @user.save
     session[:user_id] = @user.id
-    redirect_to edit_user_path(@user)
+    redirect_to search_path(@user)
 
       # helpers.login(@user.id)
       # byebug
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :location, :keyword, :cuisine)
+    params.require(:user).permit(:name, :password, :password_confirmation, :location, :keyword, :cuisine)
   end
 
   def set_user

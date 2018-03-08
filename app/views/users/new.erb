@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="margin">
-  
+
       <%= form_for @user, controller: 'users', action: 'create' do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -14,10 +14,10 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
 
-        <!-- <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %> -->
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
 
-        <%= f.submit "create" %>
+        <%= f.submit "Sign Up" %>
     <% end %>
     </div>
   </body>
