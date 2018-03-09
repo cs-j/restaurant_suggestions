@@ -34,7 +34,18 @@
  </head>
  <body>
 
-
+   <div class="error-block">
+    <% if @user.errors.any? %>
+      <div class="ui error message">
+        <div class="header"><%= pluralize(@user.errors.count, "error") %></div>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end%>
+        </ul>
+      </div>
+    <% end %>
+   </div>
 
    <div class="margin">
 <br>

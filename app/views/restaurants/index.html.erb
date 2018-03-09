@@ -3,8 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Restaurants</title>
+    <script src="js/accordion.js"></script>
+    <script language='javascript'>
+            $(document).ready(function(){
+               $('.ui.accordion').accordion();
+            });
+    </script>
   </head>
   <body>
+
+    <div class="bg-img-2">
+      <div class="head-text">
+          <h2>Find unique restaurants all around New York</h2>
+      </div>
+    </div>
 
     <div class="margin">
     <center>
@@ -15,22 +27,23 @@
       <i class="search icon" type="submit"></i>
       </div>
     <% end %></center>
-    <br>
-    <div class="ui middle aligned animated list">
-      <% sorted_restaurants = @restaurants.sort_by {|restaurant| restaurant.name.titleize} %>
-      <% sorted_restaurants.each do |restaurant| %>
-      <br>
-        <div class="item">
-          <img class="ui avatar image" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/location-alt-256.png" style="height: 25px; width: auto">
-          <div class="content">
-            <div class="header"><%= link_to restaurant.name, restaurant_path(restaurant) %></div>
-            <div class="description"><%= restaurant.address %></div>
-          </div>
-        </div>
-      <% end %>
-    </div></center>
-  </div>
+    <br><br>
 
+    <div class="ui styled accordion">
+      <% Restaurant.location_sort.each do |location, restaurant| %>
+      <div class="title">
+        <i class="dropdown icon"></i>
+          <%= location %>
+      </div>
+      <div class="content">
+        <% restaurant.each do |r| %>
+        <% @restaurant = Restaurant.find_by(name: r) %>
+          <p><%= link_to r, restaurant_path(@restaurant) %></p>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <br><br>
 
   </body>
 </html>

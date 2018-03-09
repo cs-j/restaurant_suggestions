@@ -23,5 +23,16 @@ class Restaurant < ApplicationRecord
     t.strftime "%Y-%m-%d"
   end
 
+  def self.location_sort
+    location_hash = {}
+    Restaurant.all.each do |restaurant|
+      if location_hash[restaurant.location] != nil
+        location_hash[restaurant.location] << restaurant.name
+      else
+        location_hash[restaurant.location] = [restaurant.name]
+      end
+    end
+    location_hash.sort
+  end
 
 end
