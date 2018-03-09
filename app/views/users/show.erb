@@ -11,6 +11,7 @@
       height: 100%;
     }
   </style>
+  <script type="text/javascript">$(document).ready(function(){$(".rating").rating();});</script>
   </head>
   <body>
 
@@ -18,12 +19,16 @@
 
   <div class="margin">
     <h1 class="font-fam" style="color:white"><%=  @user.name %></h1>
+    <br>
     <div class="ui three doubling stackable cards">
       <% @user.matches.each do |match | %>
         <div class="ui card">
           <div class="content">
             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Going%20to%20<%=match.restaurant.name%>%20tonight,%20who%20wants%20to%20come?" target="_blank"><i class="right floated twitter icon"></i></a>
-            <div class="header" style="font-family:Futura; color:#696CE8"><%= link_to match.restaurant.name, restaurant_path(match.restaurant) %></div>
+            <div class="header" style="font-family:Futura; color:#696CE8"><%= link_to match.restaurant.name, restaurant_path(match.restaurant) %>
+              <br>
+              <div class="ui star rating" data-rating="<%= [1, 2, 3, 4].sample %>"></div>
+            </div>
             <div class="description">
               <p></p>
             </div>

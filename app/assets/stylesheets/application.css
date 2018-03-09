@@ -57,6 +57,7 @@ footer {
   padding: 50px;
   color: pink;
   bottom: 0;
+  background-color: white;
 }
 
 div.error-block {
