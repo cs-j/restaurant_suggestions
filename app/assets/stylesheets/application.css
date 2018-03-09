@@ -1,7 +1,9 @@
 .margin {
-  margin: 20px 60px 0 60px;
+  margin-top: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  min-height: 90%;
 }
-
 
 body div.bg{
   background-image: url("https://78.media.tumblr.com/66b86f1b43cd47eed365b4905a760558/tumblr_oauh7jEeVZ1talcpyo1_500.gif");
@@ -52,7 +54,8 @@ h1, h2, h3, p {
 footer {
   width: 100%;
   position: relative;
-  padding: 30px;
+  padding: 50px;
+  color: pink;
   bottom: 0;
 }
 

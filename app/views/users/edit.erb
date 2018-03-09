@@ -46,20 +46,8 @@
               <option value="<%= keyword %>"><%= keyword %></option>
               <% end %>
             </select>
-
-<!-- keyword = Restaurant.all.map do |restaurant|
-  restaurant.keyword
-end
-
-keyword.uniq -->
           <br><br>
-          <!-- <%= f.label :location %>
-          <%= f.collection_select :location, Restaurant.all.uniq {|restaurant| restaurant.location}, :location, :location %>
-          <div class="field"> -->
-          <!-- <%= f.label :cuisine %>
-          <%= f.collection_select :cuisine, Restaurant.all.uniq {|restaurant| restaurant.cuisine}, :cuisine, :cuisine %>
-          <%= f.label :keyword %>
-          <%= f.collection_select :keyword, Restaurant.all.uniq {|restaurant| restaurant.keyword}, :keyword, :keyword %> -->
+
           <center><button type="submit" class="fluid ui button" style="background: linear-gradient(to right, #8C33E3, #696CE8, #4A9EEC); font-family:Futura; color:white">Search</button></center>
 
         <% end %>
