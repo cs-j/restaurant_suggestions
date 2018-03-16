@@ -61,9 +61,10 @@ h1, h2, h3, p {
 }
 
 footer {
+  clear:both
   width: 100%;
   position: relative;
-  padding: 50px;
+  padding: 40px;
   color: pink;
   bottom: 0;
   background-color: white;
